@@ -23,10 +23,12 @@ public class LivroPostPutDto {
     private String titulo;
 
     @JsonProperty("ano")
-    private int ano;
+    @NotNull(message = "Ano não pode ser nulo")
+    private Integer ano;
 
     @JsonProperty("edicao")
-    private int edicao;
+    @NotBlank(message = "Edição não pode ser vazia")
+    private String edicao;
 
     @JsonProperty("autorId")
     @NotNull(message = "ID do autor não pode ser nulo")
