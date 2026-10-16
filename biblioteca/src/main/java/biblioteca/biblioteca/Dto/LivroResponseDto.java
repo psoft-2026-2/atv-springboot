@@ -22,10 +22,10 @@ public class LivroResponseDto {
     private String titulo;
 
     @JsonProperty("ano")
-    private Integer ano;
+    private int ano;
 
     @JsonProperty("edicao")
-    private String edicao;
+    private int edicao;
 
     @JsonProperty("autor")
     private AutorResponseDto autor;

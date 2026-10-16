@@ -1,5 +1,7 @@
 package biblioteca.biblioteca.Model;
 
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,10 +19,9 @@ public class Livro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("id")
     private Long id;
 
-    @Column(name = "ds_isbn", nullable = false)
+    @Column(name = "ds_isbn", nullable = false, unique = true)
     @JsonProperty("isbn")
     private String isbn;
 
@@ -30,11 +31,11 @@ public class Livro {
 
     @Column(name = "nr_ano", nullable = false)
     @JsonProperty("ano")
-    private Integer ano;
+    private int ano;
 
     @Column(name = "ds_edicao", nullable = false)
     @JsonProperty("edicao")
-    private String edicao;
+    private int edicao;
 
     @ManyToOne
     @JoinColumn(name = "autor_id", nullable = false)
